@@ -1,16 +1,25 @@
+import heroBg from "@/assets/hero-bg.jpg";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90" />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 section-container py-20 text-center">
         <div className="max-w-4xl mx-auto animate-fade-up">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
             IDENTITY & RELATIONSHIP
             <br />
-            <span className="italic text-highlight">LAUNCHPAD</span>™
+            <span className="italic">LAUNCHPAD</span>™
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-light mb-10 max-w-2xl mx-auto">
@@ -18,13 +27,13 @@ const HeroSection = () => {
           </p>
 
           {/* Video Placeholder */}
-          <div className="relative max-w-3xl mx-auto mb-10 rounded-3xl overflow-hidden animate-fade-up delay-200">
-            <div className="aspect-video bg-primary/30 backdrop-blur-sm flex items-center justify-center relative group cursor-pointer rounded-3xl border border-primary-foreground/10">
-              <div className="absolute inset-0 bg-primary/10 group-hover:bg-primary/5 transition-colors rounded-3xl" />
-              <div className="w-20 h-20 rounded-full bg-highlight flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform z-10">
+          <div className="relative max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl animate-fade-up delay-200">
+            <div className="aspect-video bg-foreground/10 backdrop-blur-sm flex items-center justify-center relative group cursor-pointer">
+              <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors" />
+              <div className="w-20 h-20 rounded-full bg-highlight flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <Play className="w-8 h-8 text-highlight-foreground ml-1" />
               </div>
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-primary-foreground/80 text-sm z-10">
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-primary-foreground/80 text-sm">
                 <span>Watch the Introduction</span>
                 <span>1:33</span>
               </div>
